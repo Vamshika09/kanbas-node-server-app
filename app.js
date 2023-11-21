@@ -6,14 +6,13 @@ import cors from "cors";
 import "dotenv/config";
 
 const app = express();
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(
-    cors({
-      credentials: true,
-      origin: process.env.NODE_ENV === "production"
-        ? process.env.FRONTEND_URL
-        : process.env.FRONTEND_URL_LOCAL,
-    })
-  );
+  cors({
+    credentials: true,
+    origin: "*",
+  })
+);
 app.use(express.json());
 CourseRoutes(app);
 ModuleRoutes(app);
