@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
 
-const DB_CONNECTION_STRING = "mongodb+srv://Vamshika:Vamshika@09@atlascluster.mu3mwci.mongodb.net/Kanbas?retryWrites=true&w=majority"
+const DB_CONNECTION_STRING = "mongodb+srv://Vamshika:Vamshika%4009@atlascluster.mu3mwci.mongodb.net/kanbas?retryWrites=true&w=majority"
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/Kanbas'
 mongoose.connect(CONNECTION_STRING);
 
