@@ -8,7 +8,9 @@ import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
 
-mongoose.connect("mongodb://127.0.0.1:27017/Kanbas");
+const DB_CONNECTION_STRING = "mongodb+srv://Vamshika:Vamshika@09@atlascluster.mu3mwci.mongodb.net/?retryWrites=true&w=majority"
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/Kanbas'
+mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
